@@ -1,3 +1,3 @@
 # AllAboutPayload
 
-You can Use it but please use for educational purpuso only ! :)
+You can use it but please use for educational purpose only ! :)
