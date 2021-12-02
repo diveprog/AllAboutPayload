@@ -39,3 +39,6 @@ smithy:5f4dcc3b5aa765d61d8327deb882cf99
 
 - crack password menggunakan john
 ./john --format=raw-MD5 dvwa_password.txt
+
+
+Source : https://lms.onnocenter.or.id/wiki/index.php/DVWA:_perintah_SQL_di_server_DVWA
